@@ -7,7 +7,7 @@
 #endregion License
 
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MiniSqlQuery.Plugins.ViewTable.Commands

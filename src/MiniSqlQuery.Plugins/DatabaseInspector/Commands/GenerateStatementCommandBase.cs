@@ -6,7 +6,7 @@
 
 #endregion License
 
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using MiniSqlQuery.Core.DbModel;
 
 namespace MiniSqlQuery.Plugins.DatabaseInspector.Commands

@@ -7,7 +7,7 @@
 #endregion License
 
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 
 namespace MiniSqlQuery.Plugins.ConnectionStringsManager.Commands
 {
@@ -24,8 +24,10 @@ namespace MiniSqlQuery.Plugins.ConnectionStringsManager.Commands
 		/// <summary>Execute the command.</summary>
 		public override void Execute()
 		{
-			DbConnectionsForm frm = Services.Resolve<DbConnectionsForm>();
-			frm.ShowDialog(HostWindow.Instance);
+			using (DbConnectionsForm frm = Services.Resolve<DbConnectionsForm>())
+			{
+				frm.ShowDialog(HostWindow.Instance);
+			}
 		}
 	}
 }

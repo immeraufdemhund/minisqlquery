@@ -1,0 +1,116 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1E47B05C-460F-4320-9B8E-FC3DA3876116}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniSqlQuery.Commands</RootNamespace>
+    <AssemblyName>MiniSqlQuery.Commands</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>..\MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.2.9.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="CancelTaskCommand.cs" />
+    <Compile Include="CloseActiveWindowCommand.cs" />
+    <Compile Include="CloseAllWindowsCommand.cs" />
+    <Compile Include="CloseDatabaseConnectionCommand.cs" />
+    <Compile Include="CommandBase.cs" />
+    <Compile Include="ConvertTextToLowerCaseCommand.cs" />
+    <Compile Include="ConvertTextToTitleCaseCommand.cs" />
+    <Compile Include="ConvertTextToUpperCaseCommand.cs" />
+    <Compile Include="CopyQueryEditorFileNameCommand.cs" />
+    <Compile Include="DisplayDbModelDependenciesCommand.cs" />
+    <Compile Include="EmailAuthorCommand.cs" />
+    <Compile Include="ExecuteTaskCommand.cs" />
+    <Compile Include="ExitApplicationCommand.cs" />
+    <Compile Include="GenerateCommandCodeCommand.cs" />
+    <Compile Include="InsertGuidCommand.cs" />
+    <Compile Include="NewFileCommand.cs" />
+    <Compile Include="NewQueryFormCommand.cs" />
+    <Compile Include="OpenConnectionFileCommand.cs" />
+    <Compile Include="OpenFileCommand.cs" />
+    <Compile Include="OpenRecentFileCommand.cs" />
+    <Compile Include="PasteAroundSelectionCommand.cs" />
+    <Compile Include="PrintCommand.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RefreshDatabaseConnectionCommand.cs" />
+    <Compile Include="SaveFileAsCommand.cs" />
+    <Compile Include="SaveFileCommand.cs" />
+    <Compile Include="SaveResultsAsDataSetCommand.cs" />
+    <Compile Include="SetLeftPasteAroundSelectionCommand.cs" />
+    <Compile Include="SetRightPasteAroundSelectionCommand.cs" />
+    <Compile Include="ShowAboutCommand.cs" />
+    <Compile Include="ShowDiscussionsWebPageCommand.cs" />
+    <Compile Include="ShowHelpCommand.cs" />
+    <Compile Include="ShowOptionsFormCommand.cs" />
+    <Compile Include="ShowUrlCommand.cs" />
+    <Compile Include="ShowWebPageCommand.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniSqlQuery.CommonControls\MiniSqlQuery.CommonControls.csproj">
+      <Project>{f33cd7b8-e3a2-4766-8b64-599f3ab7c4fc}</Project>
+      <Name>MiniSqlQuery.CommonControls</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniSqlQuery.Core\MiniSqlQuery.Core.csproj">
+      <Project>{b819cf6a-b5fd-4e85-842d-fd855f856a5a}</Project>
+      <Name>MiniSqlQuery.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="..\MiniSqlQuery.snk">
+      <Link>MiniSqlQuery.snk</Link>
+    </None>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

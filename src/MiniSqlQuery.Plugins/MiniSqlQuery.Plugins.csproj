@@ -33,7 +33,7 @@
     <SignAssembly>true</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>MiniSqlQuery.Plugins.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
@@ -119,8 +119,6 @@
     <Compile Include="SearchTools\SearchToolsLoader.cs" />
     <Compile Include="TemplateViewer\Commands\NewQueryByTemplateCommand.cs" />
     <Compile Include="TemplateViewer\Commands\RunTemplateCommand.cs" />
-    <Compile Include="TemplateViewer\Commands\SaveTemplateFileAsCommand.cs" />
-    <Compile Include="TemplateViewer\Commands\SaveTemplateFileCommand.cs" />
     <Compile Include="TemplateViewer\ITemplateEditor.cs" />
     <Compile Include="TemplateViewer\TemplateData.cs" />
     <Compile Include="TemplateViewer\TemplateEditorForm.cs">
@@ -159,6 +157,10 @@
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MiniSqlQuery.Commands\MiniSqlQuery.Commands.csproj">
+      <Project>{1e47b05c-460f-4320-9b8e-fc3da3876116}</Project>
+      <Name>MiniSqlQuery.Commands</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MiniSqlQuery.Core\MiniSqlQuery.Core.csproj">
       <Project>{b819cf6a-b5fd-4e85-842d-fd855f856a5a}</Project>
       <Name>MiniSqlQuery.Core</Name>
@@ -208,7 +210,9 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="MiniSqlQuery.Plugins.snk" />
+    <None Include="..\MiniSqlQuery.snk">
+      <Link>MiniSqlQuery.snk</Link>
+    </None>
     <None Include="packages.config" />
     <None Include="TemplateViewer\TemplateHelp.rtf" />
   </ItemGroup>
@@ -216,6 +220,7 @@
     <Content Include="license.txt" />
     <Content Include="ViewTable\table.ico" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

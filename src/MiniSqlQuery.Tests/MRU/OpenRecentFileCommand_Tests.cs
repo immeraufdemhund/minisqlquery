@@ -1,5 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using MiniSqlQuery.Commands;
 using MiniSqlQuery.Core;
 using NUnit.Framework;

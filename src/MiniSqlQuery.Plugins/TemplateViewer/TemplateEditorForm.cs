@@ -8,10 +8,9 @@
 
 using ICSharpCode.TextEditor.Document;
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using MiniSqlQuery.Core.Controls;
 using MiniSqlQuery.Core.Template;
-using MiniSqlQuery.Plugins.TemplateViewer.Commands;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -445,7 +444,7 @@ namespace MiniSqlQuery.Plugins.TemplateViewer
 				}
 				else if (saveFile == DialogResult.Yes)
 				{
-					CommandManager.GetCommandInstance<SaveTemplateFileCommand>().Execute();
+					CommandManager.GetCommandInstance<SaveFileCommand>().Execute();
 				}
 			}
 		}

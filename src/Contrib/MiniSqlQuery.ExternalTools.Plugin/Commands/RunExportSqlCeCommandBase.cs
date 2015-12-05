@@ -3,7 +3,7 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MiniSqlQuery.ExternalTools.Plugin.Commands

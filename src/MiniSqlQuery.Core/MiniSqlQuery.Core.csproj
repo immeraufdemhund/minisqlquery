@@ -13,7 +13,7 @@
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
     <OldToolsVersion>3.5</OldToolsVersion>
@@ -108,33 +108,7 @@
     <Compile Include="BasicTextFindService.cs" />
     <Compile Include="BatchProgressEventArgs.cs" />
     <Compile Include="CommandManager.cs" />
-    <Compile Include="Commands\CancelTaskCommand.cs" />
-    <Compile Include="Commands\CloseActiveWindowCommand.cs" />
-    <Compile Include="Commands\CloseAllWindowsCommand.cs" />
-    <Compile Include="Commands\CommandBase.cs" />
     <Compile Include="ApplicationServices.cs" />
-    <Compile Include="Commands\CloseDatabaseConnectionCommand.cs" />
-    <Compile Include="Commands\ConvertTextToLowerCaseCommand.cs" />
-    <Compile Include="Commands\ConvertTextToTitleCaseCommand.cs" />
-    <Compile Include="Commands\ConvertTextToUpperCaseCommand.cs" />
-    <Compile Include="Commands\CopyQueryEditorFileNameCommand.cs" />
-    <Compile Include="Commands\DisplayDbModelDependenciesCommand.cs" />
-    <Compile Include="Commands\EmailAuthorCommand.cs" />
-    <Compile Include="Commands\ExecuteTaskCommand.cs" />
-    <Compile Include="Commands\ExitApplicationCommand.cs" />
-    <Compile Include="Commands\GenerateCommandCodeCommand.cs" />
-    <Compile Include="Commands\InsertGuidCommand.cs" />
-    <Compile Include="Commands\NewQueryFormCommand.cs" />
-    <Compile Include="Commands\OpenConnectionFileCommand.cs" />
-    <Compile Include="Commands\PasteAroundSelectionCommand.cs" />
-    <Compile Include="Commands\PrintCommand.cs" />
-    <Compile Include="Commands\RefreshDatabaseConnectionCommand.cs" />
-    <Compile Include="Commands\SetLeftPasteAroundSelectionCommand.cs" />
-    <Compile Include="Commands\SetRightPasteAroundSelectionCommand.cs" />
-    <Compile Include="Commands\ShowDiscussionsWebPageCommand.cs" />
-    <Compile Include="Commands\ShowHelpCommand.cs" />
-    <Compile Include="Commands\ShowUrlCommand.cs" />
-    <Compile Include="Commands\ShowWebPageCommand.cs" />
     <Compile Include="Controls\BatchQuerySelectControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
@@ -238,6 +212,9 @@
     <Content Include="DefaultConnectionDefinitionFile.xml" />
     <Content Include="Images\accept.png" />
     <Content Include="license.txt" />
+    <None Include="..\MiniSqlQuery.snk">
+      <Link>MiniSqlQuery.snk</Link>
+    </None>
     <None Include="Images\add.png" />
     <Content Include="Images\App.ico" />
     <Content Include="Images\ApplicationIcon.png" />
@@ -347,7 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Migrated rules for MiniSqlQuery.Core %282%29.ruleset" />
-    <None Include="MiniSqlQuery.snk" />
   </ItemGroup>
   <ItemGroup>
     <BootstrapperPackage Include="Microsoft.Net.Client.3.5">

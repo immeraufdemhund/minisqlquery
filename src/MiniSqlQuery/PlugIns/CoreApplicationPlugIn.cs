@@ -12,7 +12,6 @@ using System.Linq;
 using System.Windows.Forms;
 using MiniSqlQuery.Commands;
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
 
 namespace MiniSqlQuery.PlugIns
 {

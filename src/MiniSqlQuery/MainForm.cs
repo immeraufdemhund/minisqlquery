@@ -5,13 +5,13 @@
 // http://minisqlquery.codeplex.com/license
 #endregion
 
+using MiniSqlQuery.Commands;
+using MiniSqlQuery.Core;
+using MiniSqlQuery.Properties;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.Windows.Forms;
-using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
-using MiniSqlQuery.Properties;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MiniSqlQuery

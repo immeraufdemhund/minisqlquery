@@ -34,7 +34,7 @@ namespace MiniSqlQuery.Core
 		/// 	Gets an instance of <see cref = "DbConnection" /> depending on the value of <see cref = "ConnectionDefinition" />.
 		/// </summary>
 		/// <value>The connection.</value>
-		DbConnection Connection { get; }
+		DbConnection Connection { get; } //TODO consider not using DbConnection but instead a different class that can be used to give state information without having to expose System.Drawing
 
 		/// <summary>
 		/// 	Gets or sets a reference to the current connection definiton class.

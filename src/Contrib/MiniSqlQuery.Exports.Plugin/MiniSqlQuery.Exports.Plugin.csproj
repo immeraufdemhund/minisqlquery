@@ -84,6 +84,10 @@
     <None Include="Resources\Folder_Open.png" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\..\MiniSqlQuery.Commands\MiniSqlQuery.Commands.csproj">
+      <Project>{1e47b05c-460f-4320-9b8e-fc3da3876116}</Project>
+      <Name>MiniSqlQuery.Commands</Name>
+    </ProjectReference>
     <ProjectReference Include="..\..\MiniSqlQuery.Core\MiniSqlQuery.Core.csproj">
       <Project>{B819CF6A-B5FD-4E85-842D-FD855F856A5A}</Project>
       <Name>MiniSqlQuery.Core</Name>

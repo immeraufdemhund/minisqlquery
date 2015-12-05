@@ -1,5 +1,4 @@
-using System;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using MiniSqlQuery.ExternalTools.Plugin.Properties;
 
 namespace MiniSqlQuery.ExternalTools.Plugin.Commands

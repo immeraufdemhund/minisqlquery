@@ -1,5 +1,4 @@
-﻿using System;
-using MiniSqlQuery.Core.Commands;
+﻿using MiniSqlQuery.Commands;
 
 namespace MiniSqlQuery.Exports.Plugin.Commands
 {

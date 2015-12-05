@@ -59,29 +59,7 @@ namespace MiniSqlQuery.Properties {
                 resourceCulture = value;
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to MINI SQL QUERY LICENSE
-        ///PK Software - Paul Kohler
-        ///paul@pksoftware.net
-        ///
-        ///----------------------------------------------------------------------
-        ///
-        ///Microsoft Public License (Ms-PL)
-        ///
-        ///This license governs use of the accompanying software. If you use the software, you accept this license. If you do not accept the license, do not use the software.
-        ///
-        ///1. Definitions
-        ///
-        ///The terms &quot;reproduce,&quot; &quot;reproduction,&quot; &quot;derivative works,&quot; and &quot;distribution&quot; have the same meaning here as under U.S. copyright law.
-        ///
-        ///A &quot;con [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string LicenseMiniSqlQuery {
-            get {
-                return ResourceManager.GetString("LicenseMiniSqlQuery", resourceCulture);
-            }
-        }
+
         
         /// <summary>
         ///   Looks up a localized string similar to Messages.
@@ -91,37 +69,7 @@ namespace MiniSqlQuery.Properties {
                 return ResourceManager.GetString("Messages", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to &lt;!DOCTYPE html PUBLIC &quot;-//W3C//DTD XHTML 1.0 Transitional//EN&quot; &quot;http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd&quot;&gt;
-        ///&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
-        ///&lt;head&gt;
-        ///	&lt;title&gt;Mini SQL Query Read Me&lt;/title&gt;
-        ///	&lt;style type=&quot;text/css&quot;&gt;
-        ///		h1, h2, h3, h4
-        ///		{
-        ///			font-family: Verdana;
-        ///		}
-        ///		blockquote, p, ul, ol, li
-        ///		{
-        ///			font-family: Verdana;
-        ///			font-size: small;
-        ///		}
-        ///	&lt;/style&gt;
-        ///&lt;/head&gt;
-        ///&lt;body&gt;
-        ///	&lt;h3&gt;
-        ///		Mini SQL Query
-        ///	&lt;/h3&gt;
-        ///	&lt;blockquote&gt;
-        ///		&lt;p&gt;
-        ///			&quot;&lt;b&gt;Mini SQL Query&lt;/b&gt; from &lt;b&gt;PK Software&lt; [rest of string was truncated]&quot;;.
-        /// </summary>
-        internal static string ReadMe {
-            get {
-                return ResourceManager.GetString("ReadMe", resourceCulture);
-            }
-        }
+
         
         /// <summary>
         ///   Looks up a localized string similar to Reload Connection?.

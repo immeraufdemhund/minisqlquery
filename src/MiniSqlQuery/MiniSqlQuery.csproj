@@ -14,7 +14,7 @@
     <FileAlignment>512</FileAlignment>
     <StartupObject>MiniSqlQuery.App</StartupObject>
     <SignAssembly>true</SignAssembly>
-    <AssemblyOriginatorKeyFile>MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\MiniSqlQuery.snk</AssemblyOriginatorKeyFile>
     <ApplicationIcon>App.ico</ApplicationIcon>
     <FileUpgradeFlags>
     </FileUpgradeFlags>
@@ -91,25 +91,11 @@
     <Compile Include="..\CommonAssemblyInfo.cs">
       <Link>CommonAssemblyInfo.cs</Link>
     </Compile>
-    <Compile Include="AboutForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="AboutForm.Designer.cs">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="App.cs" />
     <Compile Include="ApplicationSettings.cs" />
     <Compile Include="BasicEditors.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Commands\NewFileCommand.cs" />
-    <Compile Include="Commands\OpenFileCommand.cs" />
-    <Compile Include="Commands\OpenRecentFileCommand.cs" />
-    <Compile Include="Commands\SaveFileAsCommand.cs" />
-    <Compile Include="Commands\SaveFileCommand.cs" />
-    <Compile Include="Commands\SaveResultsAsDataSetCommand.cs" />
-    <Compile Include="Commands\ShowAboutCommand.cs" />
-    <Compile Include="Commands\ShowOptionsFormCommand.cs" />
     <Compile Include="CopyForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -134,18 +120,6 @@
     <Compile Include="MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="NewFileForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="NewFileForm.Designer.cs">
-      <DependentUpon>NewFileForm.cs</DependentUpon>
-    </Compile>
-    <Compile Include="OptionsForm.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="OptionsForm.Designer.cs">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
-    </Compile>
     <Compile Include="PlugIns\CoreApplicationPlugIn.cs" />
     <Compile Include="PlugIns\CoreMiniSqlQueryConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -156,10 +130,6 @@
     <Content Include="x86\SQLite.Interop.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
-    <EmbeddedResource Include="AboutForm.resx">
-      <DependentUpon>AboutForm.cs</DependentUpon>
-      <SubType>Designer</SubType>
-    </EmbeddedResource>
     <EmbeddedResource Include="BasicEditor.resx">
       <DependentUpon>BasicEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -173,12 +143,6 @@
     <EmbeddedResource Include="MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
       <SubType>Designer</SubType>
-    </EmbeddedResource>
-    <EmbeddedResource Include="NewFileForm.resx">
-      <DependentUpon>NewFileForm.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="OptionsForm.resx">
-      <DependentUpon>OptionsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -194,8 +158,10 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="..\MiniSqlQuery.snk">
+      <Link>MiniSqlQuery.snk</Link>
+    </None>
     <None Include="app.config" />
-    <None Include="MiniSqlQuery.snk" />
     <None Include="packages.config">
       <SubType>Designer</SubType>
     </None>
@@ -255,9 +221,6 @@
     <Content Include="Images\plugin_go.png" />
     <Content Include="Images\plugin_link.png" />
     <Content Include="Images\table_save.png" />
-    <Content Include="License-MiniSqlQuery.txt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
     <Content Include="script.ico" />
     <None Include="Mode.xsd" />
     <None Include="MT-Mode.xshd">
@@ -283,6 +246,14 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\MiniSqlQuery.Commands\MiniSqlQuery.Commands.csproj">
+      <Project>{1e47b05c-460f-4320-9b8e-fc3da3876116}</Project>
+      <Name>MiniSqlQuery.Commands</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\MiniSqlQuery.CommonControls\MiniSqlQuery.CommonControls.csproj">
+      <Project>{f33cd7b8-e3a2-4766-8b64-599f3ab7c4fc}</Project>
+      <Name>MiniSqlQuery.CommonControls</Name>
+    </ProjectReference>
     <ProjectReference Include="..\MiniSqlQuery.Core\MiniSqlQuery.Core.csproj">
       <Project>{B819CF6A-B5FD-4E85-842D-FD855F856A5A}</Project>
       <Name>MiniSqlQuery.Core</Name>

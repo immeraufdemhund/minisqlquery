@@ -10,7 +10,6 @@ using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Diagnostics;
 using System.Drawing;
 using System.Drawing.Printing;
 using System.IO;
@@ -20,7 +19,6 @@ using ICSharpCode.TextEditor.Document;
 using ICSharpCode.TextEditor.Gui.CompletionWindow;
 using MiniSqlQuery.Commands;
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
 using MiniSqlQuery.Properties;
 using WeifenLuo.WinFormsUI.Docking;
 
@@ -67,8 +65,8 @@ namespace MiniSqlQuery
 
 		private bool _cleaningTabs;
 
-        TextArea _textArea;
-        CodeCompletionWindow _completionWindow;
+		TextArea _textArea;
+		CodeCompletionWindow _completionWindow;
 
 		/// <summary>Initializes a new instance of the <see cref="QueryForm"/> class.</summary>
 		public QueryForm()
@@ -78,9 +76,9 @@ namespace MiniSqlQuery
 			txtQuery.ContextMenuStrip = contextMenuStripQuery;
 			LoadHighlightingProvider();
 			txtQuery.Document.DocumentChanged += DocumentDocumentChanged;
-            _textArea = txtQuery.ActiveTextAreaControl.TextArea;
+			_textArea = txtQuery.ActiveTextAreaControl.TextArea;
 
-		    contextMenuStripQuery.Items.Add(CommandControlBuilder.CreateToolStripMenuItem<ExecuteTaskCommand>());
+			contextMenuStripQuery.Items.Add(CommandControlBuilder.CreateToolStripMenuItem<ExecuteTaskCommand>());
 			contextMenuStripQuery.Items.Add(CommandControlBuilder.CreateToolStripMenuItem<CancelTaskCommand>());
 
 			editorContextMenuStrip.Items.Add(CommandControlBuilder.CreateToolStripMenuItem<SaveFileCommand>());
@@ -103,37 +101,37 @@ namespace MiniSqlQuery
 			_settings = settings;
 			_hostWindow = hostWindow;
 
-            var completionProvider = _services.Resolve<ICompletionProvider>();
-            if (completionProvider.Enabled)
-            {
-                _textArea.KeyEventHandler += completionProvider.KeyEventHandlerFired;
-            }
+			var completionProvider = _services.Resolve<ICompletionProvider>();
+			if (completionProvider.Enabled)
+			{
+				_textArea.KeyEventHandler += completionProvider.KeyEventHandlerFired;
+			}
 		}
 
-	    public CodeCompletionWindow CodeCompletionWindow 
-        {
-	        get { return _completionWindow; }
-	        set
-	        {
-                _completionWindow = value;
-                if (_completionWindow != null)
-	            {
-	                _completionWindow.Closed += CompletionWindowClosed;
-	            }
-	        }
-	    }
+		public CodeCompletionWindow CodeCompletionWindow 
+		{
+			get { return _completionWindow; }
+			set
+			{
+				_completionWindow = value;
+				if (_completionWindow != null)
+				{
+					_completionWindow.Closed += CompletionWindowClosed;
+				}
+			}
+		}
 
-	    private void CompletionWindowClosed(object sender, EventArgs e)
-        {
-            if (_completionWindow != null)
-            {
-                _completionWindow.Closed -= CompletionWindowClosed;
-                _completionWindow.Dispose();
-                _completionWindow = null;
-            }
-	    }
+		private void CompletionWindowClosed(object sender, EventArgs e)
+		{
+			if (_completionWindow != null)
+			{
+				_completionWindow.Closed -= CompletionWindowClosed;
+				_completionWindow.Dispose();
+				_completionWindow = null;
+			}
+		}
 
-	    /// <summary>Gets or sets AllText.</summary>
+		/// <summary>Gets or sets AllText.</summary>
 		public string AllText
 		{
 			get { return txtQuery.Text; }
@@ -460,10 +458,10 @@ namespace MiniSqlQuery
 		/// <summary>The cancel task.</summary>
 		public void CancelTask()
 		{
-            if (queryBackgroundWorker.IsBusy && _runner != null)
-		    {
-                _runner.Cancel();
-            }
+			if (queryBackgroundWorker.IsBusy && _runner != null)
+			{
+				_runner.Cancel();
+			}
 		}
 
 		/// <summary>The execute task.</summary>

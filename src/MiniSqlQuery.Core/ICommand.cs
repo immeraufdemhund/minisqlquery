@@ -14,7 +14,7 @@ namespace MiniSqlQuery.Core
 	/// <summary>
 	/// 	Represents a "command", typically a user action such as saving a file or executing a query.
 	/// </summary>
-	public interface ICommand
+	public interface ICommand //TODO consider using System.Windows.Input.ICommand then calling this something else
 	{
 		/// <summary>
 		/// 	Gets a value indicating whether this <see cref = "ICommand" /> is enabled.

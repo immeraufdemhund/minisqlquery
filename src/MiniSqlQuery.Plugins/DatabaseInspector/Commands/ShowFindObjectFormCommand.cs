@@ -7,7 +7,7 @@
 #endregion License
 
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using System;
 using System.Linq;
 using System.Windows.Forms;

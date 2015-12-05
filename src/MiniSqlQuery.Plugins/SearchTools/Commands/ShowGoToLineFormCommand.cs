@@ -7,7 +7,7 @@
 #endregion License
 
 using MiniSqlQuery.Core;
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 using System.Windows.Forms;
 
 namespace MiniSqlQuery.Plugins.SearchTools.Commands

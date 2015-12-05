@@ -6,7 +6,7 @@
 
 #endregion License
 
-using MiniSqlQuery.Core.Commands;
+using MiniSqlQuery.Commands;
 
 namespace MiniSqlQuery.Plugins.TextGenerator.Commands
 {
