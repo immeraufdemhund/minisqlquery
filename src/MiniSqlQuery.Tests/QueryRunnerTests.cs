@@ -4,7 +4,7 @@
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
 
-#endregion
+#endregion License
 
 using System;
 using System.Data.Common;
@@ -61,7 +61,7 @@ namespace MiniSqlQuery.Tests
 			_runner.ExecuteQuery("-- should be OK");
 			_runner.ExecuteQuery("/* should be OK */");
 			_runner.ExecuteQuery(@"/*
-				should be OK 
+				should be OK
 				*/");
 		}
 
@@ -69,7 +69,7 @@ namespace MiniSqlQuery.Tests
 		public void No_connection_expects_error_on_Execute()
 		{
 			_runner = new QueryRunner(DbProviderFactories.GetFactory("System.Data.SqlClient"), null, true, 30);
-			Assert.That(()=>_runner.ExecuteQuery(" "), 
+			Assert.That(() => _runner.ExecuteQuery(" "),
 				Throws.InstanceOf<InvalidOperationException>().With.Message.EqualTo("Supply a connection."));
 		}
 

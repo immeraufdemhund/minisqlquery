@@ -1,38 +1,41 @@
 #region License
+
 // Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
+
+#endregion License
+
 using System.Collections.Generic;
 using System.Data.Common;
 using MiniSqlQuery.Core.DbModel;
 using NUnit.Framework;
 
-
 namespace MiniSqlQuery.Tests.DbModel
 {
-	[TestFixture(Description = "Requires SQLCE DB", Category = "Functional, SqlCeSchemaService")]
+	[TestFixture(Description = "Requires SQLCE DB", Category = "Functional")]
 	public class SqlCeSchemaService_DataType_ToDDL_Tests
 	{
 		#region Setup/Teardown
-		private const string _connStr = @"data source=|DataDirectory|\sqlce-test.sdf";
-		private const string _providerName = "System.Data.SqlServerCe.3.5";
 
 		[SetUp]
 		public void TestSetup()
 		{
-			using (DbConnection conn = DbProviderFactories.GetFactory(_providerName).CreateConnection())
+			_service = new SqlCeSchemaService();
+			using (var conn = DbProviderFactories.GetFactory(_providerName).CreateConnection())
 			{
 				conn.ConnectionString = _connStr;
 				conn.Open();
-				var service = new SqlCeSchemaService();
-				_dbTypes = service.GetDbTypes(conn);
+				_dbTypes = _service.GetDbTypes(conn);
 			}
 		}
 
-		#endregion
+		#endregion Setup/Teardown
 
-		private static Dictionary<string, DbModelType> _dbTypes;
+		private SqlCeSchemaService _service;
+		private string _connStr = @"data source=|DataDirectory|\sqlce-test.sdf";
+		private string _providerName = "System.Data.SqlServerCe.3.5";
+		private Dictionary<string, DbModelType> _dbTypes;
 
 		[Test]
 		public void nvarchar_with_value()

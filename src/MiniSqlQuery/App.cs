@@ -4,25 +4,19 @@
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
 
-#endregion
+#endregion License
 
 using System;
 using System.Linq;
 using System.Threading;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiniSqlQuery.Core;
 using MiniSqlQuery.Core.DbModel;
 using MiniSqlQuery.Core.Forms;
 using MiniSqlQuery.Core.Template;
-using MiniSqlQuery.PlugIns;
-using MiniSqlQuery.PlugIns.ConnectionStringsManager;
-using MiniSqlQuery.PlugIns.DatabaseInspector;
-using MiniSqlQuery.PlugIns.SearchTools;
-using MiniSqlQuery.PlugIns.TemplateViewer;
-using MiniSqlQuery.PlugIns.TextGenerator;
-using MiniSqlQuery.PlugIns.ViewTable;
+using MiniSqlQuery.Plugins.TemplateViewer;
 using MiniSqlQuery.Properties;
-using System.Threading.Tasks;
 
 namespace MiniSqlQuery
 {

@@ -1,0 +1,227 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{BAC780DA-990A-4265-90DD-E4BEE14A0277}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MiniSqlQuery.Plugins</RootNamespace>
+    <AssemblyName>MiniSqlQuery.Plugins</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>MiniSqlQuery.Plugins.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.TextEditor, Version=3.2.1.6466, Culture=neutral, PublicKeyToken=4d61825e8dd49f1a, processorArchitecture=MSIL">
+      <HintPath>..\packages\ICSharpCode.TextEditor.3.2.1.6466\lib\Net20\ICSharpCode.TextEditor.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=2.9.0.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
+      <HintPath>..\packages\DockPanelSuite.2.9.0.0\lib\net40\WeifenLuo.WinFormsUI.Docking.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\CommonAssemblyInfo.cs">
+      <Link>CommonAssemblyInfo.cs</Link>
+    </Compile>
+    <Compile Include="ConnectionStringsManager\Commands\EditConnectionsFormCommand.cs" />
+    <Compile Include="ConnectionStringsManager\ConnectionStringBuilderForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionStringsManager\ConnectionStringBuilderForm.Designer.cs">
+      <DependentUpon>ConnectionStringBuilderForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionStringsManager\ConnectionStringsManagerLoader.cs" />
+    <Compile Include="ConnectionStringsManager\DbConnectionsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ConnectionStringsManager\DbConnectionsForm.Designer.cs">
+      <DependentUpon>DbConnectionsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ConnectionStringsManager\GenericConnectionStringBuilder.cs" />
+    <Compile Include="DatabaseInspector\Commands\CopyTableNameCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateDeleteStatementCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateInsertStatementCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateSelectCountStatementCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateSelectStatementCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateStatementCommandBase.cs" />
+    <Compile Include="DatabaseInspector\Commands\GenerateUpdateStatementCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\LocateFkReferenceColumnCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\ShowDatabaseInspectorCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\ShowFindObjectFormCommand.cs" />
+    <Compile Include="DatabaseInspector\Commands\TruncateTableCommand.cs" />
+    <Compile Include="DatabaseInspector\DatabaseInspectorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseInspector\DatabaseInspectorForm.Designer.cs">
+      <DependentUpon>DatabaseInspectorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DatabaseInspector\DatabaseInspectorLoader.cs" />
+    <Compile Include="DatabaseInspector\FindObjectForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="DatabaseInspector\FindObjectForm.Designer.cs">
+      <DependentUpon>FindObjectForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="PluginLoaderBase.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTools\Commands\FindNextStringCommand.cs" />
+    <Compile Include="SearchTools\Commands\ReplaceStringCommand.cs" />
+    <Compile Include="SearchTools\Commands\ShowFindTextFormCommand.cs" />
+    <Compile Include="SearchTools\Commands\ShowGoToLineFormCommand.cs" />
+    <Compile Include="SearchTools\FindReplaceForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTools\FindReplaceForm.designer.cs">
+      <DependentUpon>FindReplaceForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTools\GoToLineForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SearchTools\GoToLineForm.designer.cs">
+      <DependentUpon>GoToLineForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="SearchTools\SearchToolsCommon.cs" />
+    <Compile Include="SearchTools\SearchToolsLoader.cs" />
+    <Compile Include="TemplateViewer\Commands\NewQueryByTemplateCommand.cs" />
+    <Compile Include="TemplateViewer\Commands\RunTemplateCommand.cs" />
+    <Compile Include="TemplateViewer\Commands\SaveTemplateFileAsCommand.cs" />
+    <Compile Include="TemplateViewer\Commands\SaveTemplateFileCommand.cs" />
+    <Compile Include="TemplateViewer\ITemplateEditor.cs" />
+    <Compile Include="TemplateViewer\TemplateData.cs" />
+    <Compile Include="TemplateViewer\TemplateEditorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateViewer\TemplateEditorForm.Designer.cs">
+      <DependentUpon>TemplateEditorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TemplateViewer\TemplateHost.cs" />
+    <Compile Include="TemplateViewer\TemplateModel.cs" />
+    <Compile Include="TemplateViewer\TemplateResources.Designer.cs">
+      <DependentUpon>TemplateResources.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="TemplateViewer\TemplateResult.cs" />
+    <Compile Include="TemplateViewer\TemplateViewerLoader.cs" />
+    <Compile Include="TemplateViewer\TemplateViewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="TemplateViewer\TemplateViewForm.Designer.cs">
+      <DependentUpon>TemplateViewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="TextGenerator\Commands\RunTextGeneratorCommand.cs" />
+    <Compile Include="TextGenerator\TextGeneratorLoader.cs" />
+    <Compile Include="TextGenerator\TextGeneratorService.cs" />
+    <Compile Include="ViewTable\Commands\ViewTableFormCommand.cs" />
+    <Compile Include="ViewTable\Commands\ViewTableFromInspectorCommand.cs" />
+    <Compile Include="ViewTable\ViewTableForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ViewTable\ViewTableForm.Designer.cs">
+      <DependentUpon>ViewTableForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ViewTable\ViewTableLoader.cs" />
+    <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\MiniSqlQuery.Core\MiniSqlQuery.Core.csproj">
+      <Project>{b819cf6a-b5fd-4e85-842d-fd855f856a5a}</Project>
+      <Name>MiniSqlQuery.Core</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ConnectionStringsManager\ConnectionStringBuilderForm.resx">
+      <DependentUpon>ConnectionStringBuilderForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ConnectionStringsManager\DbConnectionsForm.resx">
+      <DependentUpon>DbConnectionsForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseInspector\DatabaseInspectorForm.resx">
+      <DependentUpon>DatabaseInspectorForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="DatabaseInspector\FindObjectForm.resx">
+      <DependentUpon>FindObjectForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTools\FindReplaceForm.resx">
+      <DependentUpon>FindReplaceForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SearchTools\GoToLineForm.resx">
+      <DependentUpon>GoToLineForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateViewer\TemplateEditorForm.resx">
+      <DependentUpon>TemplateEditorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateViewer\TemplateResources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>TemplateResources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="TemplateViewer\TemplateViewForm.resx">
+      <DependentUpon>TemplateViewForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ViewTable\ViewTableForm.resx">
+      <DependentUpon>ViewTableForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MiniSqlQuery.Plugins.snk" />
+    <None Include="packages.config" />
+    <None Include="TemplateViewer\TemplateHelp.rtf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="license.txt" />
+    <Content Include="ViewTable\table.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

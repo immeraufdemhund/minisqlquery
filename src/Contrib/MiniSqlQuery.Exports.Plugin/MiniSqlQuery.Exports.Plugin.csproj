@@ -88,6 +88,10 @@
       <Project>{B819CF6A-B5FD-4E85-842D-FD855F856A5A}</Project>
       <Name>MiniSqlQuery.Core</Name>
     </ProjectReference>
+    <ProjectReference Include="..\..\MiniSqlQuery.Plugins\MiniSqlQuery.Plugins.csproj">
+      <Project>{bac780da-990a-4265-90dd-e4bee14a0277}</Project>
+      <Name>MiniSqlQuery.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

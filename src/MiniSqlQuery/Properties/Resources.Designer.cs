@@ -61,61 +61,6 @@ namespace MiniSqlQuery.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Could not populate with current connection string - .
-        /// </summary>
-        internal static string BindNewConnectionStringBuilder_Could_not_populate_with_current_connection_string___ {
-            get {
-                return ResourceManager.GetString("BindNewConnectionStringBuilder_Could_not_populate_with_current_connection_string_" +
-                        "__", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Connected to &apos;{0}&apos; successfully..
-        /// </summary>
-        internal static string Connected_to_0_successfully {
-            get {
-                return ResourceManager.GetString("Connected_to_0_successfully", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Connection Failed.
-        /// </summary>
-        internal static string Connection_Failed {
-            get {
-                return ResourceManager.GetString("Connection_Failed", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Connection Successful.
-        /// </summary>
-        internal static string Connection_Successful {
-            get {
-                return ResourceManager.GetString("Connection_Successful", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Database.
-        /// </summary>
-        internal static string Database {
-            get {
-                return ResourceManager.GetString("Database", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Failed connecting to &apos;{0}&apos;.{1}{2}.
-        /// </summary>
-        internal static string Failed_connecting_to_0_1_2 {
-            get {
-                return ResourceManager.GetString("Failed_connecting_to_0_1_2", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to MINI SQL QUERY LICENSE
         ///PK Software - Paul Kohler
         ///paul@pksoftware.net
@@ -188,15 +133,6 @@ namespace MiniSqlQuery.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Save Changes?.
-        /// </summary>
-        internal static string Save_Changes {
-            get {
-                return ResourceManager.GetString("Save_Changes", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to &lt;?xml version=&quot;1.0&quot;?&gt;
         ///&lt;!-- 
         ///Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
@@ -219,48 +155,11 @@ namespace MiniSqlQuery.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Table: .
-        /// </summary>
-        internal static string Table_colon {
-            get {
-                return ResourceManager.GetString("Table_colon", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Table: (none).
-        /// </summary>
-        internal static string Table_none {
-            get {
-                return ResourceManager.GetString("Table_none", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Tables.
-        /// </summary>
-        internal static string Tables {
-            get {
-                return ResourceManager.GetString("Tables", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Templates.
         /// </summary>
         internal static string TemplatesDirectoryName {
             get {
                 return ResourceManager.GetString("TemplatesDirectoryName", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to The connection details have changed, do you want to save?
-        ///.
-        /// </summary>
-        internal static string The_connection_details_have_changed__do_you_want_to_save {
-            get {
-                return ResourceManager.GetString("The_connection_details_have_changed__do_you_want_to_save", resourceCulture);
             }
         }
         
@@ -272,32 +171,6 @@ namespace MiniSqlQuery.Properties {
                 return ResourceManager.GetString("The_connections_have_changed__would_you_like_to_refresh_the_database_connection", resourceCulture);
             }
         }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Data.
-        /// </summary>
-        internal static string ViewData {
-            get {
-                return ResourceManager.GetString("ViewData", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to View Data Error.
-        /// </summary>
-        internal static string ViewDataError {
-            get {
-                return ResourceManager.GetString("ViewDataError", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Views.
-        /// </summary>
-        internal static string Views {
-            get {
-                return ResourceManager.GetString("Views", resourceCulture);
-            }
-        }
+
     }
 }

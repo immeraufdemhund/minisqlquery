@@ -1,20 +1,20 @@
 #region License
+
 // Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
+
+#endregion License
+
 using System;
 using System.Collections.Generic;
-using MiniSqlQuery.Core;
+using System.Data.Common;
 using MiniSqlQuery.Core.DbModel;
 using NUnit.Framework;
 
-using System.Data.Common;
-
 namespace MiniSqlQuery.Tests.DbModel
 {
-	[TestFixture(Description = "Requires SQLCE DB")]
-	[Category("Functional")]
+	[TestFixture(Description = "Requires SQLCE DB", Category = "Functional")]
 	public class SqlCeSchemaService_DataType_Tests
 	{
 		#region Setup/Teardown
@@ -23,18 +23,20 @@ namespace MiniSqlQuery.Tests.DbModel
 		public void TestSetup()
 		{
 			_service = new SqlCeSchemaService();
-			DbConnection conn = DbProviderFactories.GetFactory(_providerName).CreateConnection();
-			conn.ConnectionString = _connStr;
-			conn.Open();
-			_dbTypes = _service.GetDbTypes(conn);
+			using (var conn = DbProviderFactories.GetFactory(_providerName).CreateConnection())
+			{
+				conn.ConnectionString = _connStr;
+				conn.Open();
+				_dbTypes = _service.GetDbTypes(conn);
+			}
 		}
 
-		#endregion
+		#endregion Setup/Teardown
 
 		private SqlCeSchemaService _service;
-		private string _connStr  = @"data source=|DataDirectory|\sqlce-test.sdf";
+		private string _connStr = @"data source=|DataDirectory|\sqlce-test.sdf";
 		private string _providerName = "System.Data.SqlServerCe.3.5";
-		Dictionary<string, DbModelType> _dbTypes;
+		private Dictionary<string, DbModelType> _dbTypes;
 
 		[Test]
 		public void There_are_at_least_18_types()

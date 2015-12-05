@@ -1,7 +1,6 @@
 ﻿using System;
-using MiniSqlQuery.PlugIns.TextGenerator;
+using MiniSqlQuery.Plugins.TextGenerator;
 using NUnit.Framework;
-
 
 // ReSharper disable InconsistentNaming
 

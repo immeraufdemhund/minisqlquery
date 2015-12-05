@@ -12,9 +12,8 @@ using System.Runtime.InteropServices;
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-[assembly: ComVisibleAttribute(false)]
-[assembly: CLSCompliantAttribute(true)]
-[assembly: AssemblyConfigurationAttribute("Release - No Tests")]
-[assembly: AssemblyCompanyAttribute("Paul Kohler")]
-[assembly: AssemblyCopyrightAttribute("Copyright (C) 2005-2015 Paul Kohler")]
-
+[assembly: ComVisible(false)]
+[assembly: CLSCompliant(true)]
+[assembly: AssemblyConfiguration("Release - No Tests")]
+[assembly: AssemblyCompany("Paul Kohler")]
+[assembly: AssemblyCopyright("Copyright (C) 2005-2015 Paul Kohler")]

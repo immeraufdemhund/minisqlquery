@@ -1,14 +1,16 @@
 #region License
+
 // Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
+
+#endregion License
+
 using System;
 using System.Collections.Generic;
+using System.Data.Common;
 using MiniSqlQuery.Core.DbModel;
 using NUnit.Framework;
-
-using System.Data.Common;
 
 namespace MiniSqlQuery.Tests.DbModel
 {
@@ -21,18 +23,20 @@ namespace MiniSqlQuery.Tests.DbModel
 		public void TestSetup()
 		{
 			_service = new OleDbSchemaService();
-			DbConnection conn = DbProviderFactories.GetFactory(_providerName).CreateConnection();
-			conn.ConnectionString = _connStr;
-			conn.Open();
-			_dbTypes = _service.GetDbTypes(conn);
+			using (var conn = DbProviderFactories.GetFactory(_providerName).CreateConnection())
+			{
+				conn.ConnectionString = _connStr;
+				conn.Open();
+				_dbTypes = _service.GetDbTypes(conn);
+			}
 		}
 
-		#endregion
+		#endregion Setup/Teardown
 
 		private OleDbSchemaService _service;
 		private string _connStr = @"Provider=Microsoft.Jet.OLEDB.4.0;Data Source=C:\Projects\minisqlquery\trunk\TestDatabases\NorthWindDemo.mdb";
 		private string _providerName = "System.Data.OleDb";
-		Dictionary<string, DbModelType> _dbTypes;
+		private Dictionary<string, DbModelType> _dbTypes;
 
 		[Test]
 		public void There_are_at_least_15_types_for_access()

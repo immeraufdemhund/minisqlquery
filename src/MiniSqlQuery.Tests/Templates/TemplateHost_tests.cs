@@ -1,11 +1,14 @@
 #region License
+
 // Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
+
+#endregion License
+
 using System;
 using MiniSqlQuery.Core;
-using MiniSqlQuery.PlugIns.TemplateViewer;
+using MiniSqlQuery.Plugins.TemplateViewer;
 using NUnit.Framework;
 
 using Rhino.Mocks;
@@ -16,8 +19,8 @@ namespace MiniSqlQuery.Tests.Templates
 	public class TemplateHost_tests
 	{
 		private TemplateHost _host;
-		IApplicationServices _services;
-		IDatabaseInspector _databaseInspector;
+		private IApplicationServices _services;
+		private IDatabaseInspector _databaseInspector;
 
 		[SetUp]
 		public void TestSetUp()

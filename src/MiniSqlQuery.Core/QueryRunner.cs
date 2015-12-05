@@ -4,7 +4,7 @@
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
 
-#endregion
+#endregion License
 
 using System;
 using System.Data;
@@ -38,7 +38,7 @@ namespace MiniSqlQuery.Core
 
 		private DbCommand _command;
 
-	    /// <summary>
+		/// <summary>
 		/// 	Initializes a new instance of the <see cref = "QueryRunner" /> class.
 		/// </summary>
 		/// <param name = "factory">The factory.</param>
@@ -223,21 +223,21 @@ namespace MiniSqlQuery.Core
 			}
 		}
 
-        /// <summary>
-        /// Cancel the executing command (if busy).
-        /// </summary>
-        /// <remarks>
-        /// Note that this relies on the implementation of the DbCommand.Cancel operation.
-        /// </remarks>
-	    public void Cancel()
-	    {
-            if (IsBusy && _command != null)
-	        {
-                _command.Cancel();
-	        }
-	    }
+		/// <summary>
+		/// Cancel the executing command (if busy).
+		/// </summary>
+		/// <remarks>
+		/// Note that this relies on the implementation of the DbCommand.Cancel operation.
+		/// </remarks>
+		public void Cancel()
+		{
+			if (IsBusy && _command != null)
+			{
+				_command.Cancel();
+			}
+		}
 
-	    /// <summary>
+		/// <summary>
 		/// Sets the command timeout, currently only tested against MSSQL.
 		/// </summary>
 		/// <param name="cmd">The command.</param>
@@ -295,6 +295,7 @@ namespace MiniSqlQuery.Core
 		/// <param name = "connection">The connection.</param>
 		protected virtual void UnsubscribeFromMessages(DbConnection connection)
 		{
+			connection.Dispose();
 		}
 
 		/// <summary>

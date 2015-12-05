@@ -3,7 +3,8 @@
 // Copyright 2005-2009 Paul Kohler (http://pksoftware.net/MiniSqlQuery/). All rights reserved.
 // This source code is made available under the terms of the Microsoft Public License (Ms-PL)
 // http://minisqlquery.codeplex.com/license
-#endregion
+
+#endregion License
 
 using System;
 using System.Collections.Generic;
@@ -130,27 +131,27 @@ namespace MiniSqlQuery.Core.DbModel
 				{
 					cmd.CommandText =
 						string.Format(
-							@"SELECT 
-	KCU1.TABLE_NAME AS FK_TABLE_NAME,  
-	KCU1.CONSTRAINT_NAME AS FK_CONSTRAINT_NAME, 
+							@"SELECT
+	KCU1.TABLE_NAME AS FK_TABLE_NAME,
+	KCU1.CONSTRAINT_NAME AS FK_CONSTRAINT_NAME,
 	KCU1.COLUMN_NAME AS FK_COLUMN_NAME,
-	KCU2.TABLE_NAME AS UQ_TABLE_NAME, 
-	KCU2.CONSTRAINT_NAME AS UQ_CONSTRAINT_NAME, 
-	KCU2.COLUMN_NAME AS UQ_COLUMN_NAME, 
-	RC.UPDATE_RULE, 
-	RC.DELETE_RULE, 
-	KCU2.ORDINAL_POSITION AS UQ_ORDINAL_POSITION, 
+	KCU2.TABLE_NAME AS UQ_TABLE_NAME,
+	KCU2.CONSTRAINT_NAME AS UQ_CONSTRAINT_NAME,
+	KCU2.COLUMN_NAME AS UQ_COLUMN_NAME,
+	RC.UPDATE_RULE,
+	RC.DELETE_RULE,
+	KCU2.ORDINAL_POSITION AS UQ_ORDINAL_POSITION,
 	KCU1.ORDINAL_POSITION AS FK_ORDINAL_POSITION
-FROM 
-	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS RC 
-		JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU1 ON KCU1.CONSTRAINT_NAME = RC.CONSTRAINT_NAME 
-			JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU2 ON  KCU2.CONSTRAINT_NAME =  RC.UNIQUE_CONSTRAINT_NAME AND KCU2.ORDINAL_POSITION = KCU1.ORDINAL_POSITION AND KCU2.TABLE_NAME = RC.UNIQUE_CONSTRAINT_TABLE_NAME 
+FROM
+	INFORMATION_SCHEMA.REFERENTIAL_CONSTRAINTS RC
+		JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU1 ON KCU1.CONSTRAINT_NAME = RC.CONSTRAINT_NAME
+			JOIN INFORMATION_SCHEMA.KEY_COLUMN_USAGE KCU2 ON  KCU2.CONSTRAINT_NAME =  RC.UNIQUE_CONSTRAINT_NAME AND KCU2.ORDINAL_POSITION = KCU1.ORDINAL_POSITION AND KCU2.TABLE_NAME = RC.UNIQUE_CONSTRAINT_TABLE_NAME
 WHERE KCU1.TABLE_NAME = '{0}'
-ORDER BY 
-	FK_TABLE_NAME, 
-	FK_CONSTRAINT_NAME, 
+ORDER BY
+	FK_TABLE_NAME,
+	FK_CONSTRAINT_NAME,
 	FK_ORDINAL_POSITION
-", 
+",
 							dbTable.Name);
 					cmd.CommandType = CommandType.Text;
 					using (var dr = cmd.ExecuteReader())
@@ -158,16 +159,16 @@ ORDER BY
 						while (dr.Read())
 						{
 							dbTable.Constraints.Add(new DbModelConstraint
-							                        	{
-							                        		ConstraintTableName = dr.GetString(0), 
-							                        		ConstraintName = dr.GetString(1), 
-							                        		ColumnName = dr.GetString(2), 
-							                        		UniqueConstraintTableName = dr.GetString(3), 
-							                        		UniqueConstraintName = dr.GetString(4), 
-							                        		UniqueColumnName = dr.GetString(5), 
-							                        		UpdateRule = dr.GetString(6), 
-							                        		DeleteRule = dr.GetString(7)
-							                        	});
+							{
+								ConstraintTableName = dr.GetString(0),
+								ConstraintName = dr.GetString(1),
+								ColumnName = dr.GetString(2),
+								UniqueConstraintTableName = dr.GetString(3),
+								UniqueConstraintName = dr.GetString(4),
+								UniqueColumnName = dr.GetString(5),
+								UpdateRule = dr.GetString(6),
+								DeleteRule = dr.GetString(7)
+							});
 						}
 					}
 				}
@@ -188,7 +189,7 @@ ORDER BY
 			{
 				var column = dbTable.Columns.Find(c => c.Name == constraint.ColumnName);
 				var refTable = dbTable.ParentDb.FindTable(
-                    Utility.RenderSafeSchemaObjectName(constraint.UniqueConstraintTableSchema, constraint.UniqueConstraintTableName));
+					Utility.RenderSafeSchemaObjectName(constraint.UniqueConstraintTableSchema, constraint.UniqueConstraintTableName));
 				var refColumn = refTable.Columns.Find(c => c.Name == constraint.UniqueColumnName);
 				DbModelForeignKeyReference fk = new DbModelForeignKeyReference(column, refTable, refColumn);
 				fk.UpdateRule = constraint.UpdateRule;
@@ -286,13 +287,16 @@ ORDER BY
 				case "nvarchar":
 					dbType.Length = MAX_NCHAR_COLUMN_SIZE;
 					break;
+
 				case "ntext":
 					dbType.Length = MAX_NTEXT_COLUMN_SIZE;
 					break;
+
 				case "binary":
 				case "varbinary":
 					dbType.Length = MAX_BINARY_COLUMN_SIZE;
 					break;
+
 				case "image":
 					dbType.Length = MAX_IMAGE_COLUMN_SIZE;
 					break;
