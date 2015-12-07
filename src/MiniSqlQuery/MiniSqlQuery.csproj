@@ -75,9 +75,6 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
-    <Reference Include="System.Data.SQLite">
-      <HintPath>..\packages\System.Data.SQLite.Core.1.0.93.0\lib\net20\System.Data.SQLite.dll</HintPath>
-    </Reference>
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
@@ -124,12 +121,6 @@
     <Compile Include="PlugIns\CoreMiniSqlQueryConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Content Include="license.txt" />
-    <Content Include="x64\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="x86\SQLite.Interop.dll">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
     <EmbeddedResource Include="BasicEditor.resx">
       <DependentUpon>BasicEditor.cs</DependentUpon>
     </EmbeddedResource>
@@ -199,28 +190,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App.ico" />
-    <Content Include="Images\accept.png" />
-    <Content Include="Images\cancel.png" />
-    <Content Include="Images\cog.png" />
-    <Content Include="Images\cross.png" />
-    <Content Include="Images\database.png" />
-    <Content Include="Images\database_add.png" />
-    <Content Include="Images\database_delete.png" />
-    <Content Include="Images\database_edit.png" />
-    <Content Include="Images\database_error.png" />
-    <Content Include="Images\database_refresh.png" />
-    <Content Include="Images\disk.png" />
-    <Content Include="Images\disk_multiple.png" />
-    <Content Include="Images\email.png" />
-    <Content Include="Images\email_go.png" />
-    <Content Include="Images\folder_page.png" />
-    <Content Include="Images\lightning.png" />
-    <Content Include="Images\page.png" />
-    <Content Include="Images\page_white.png" />
-    <Content Include="Images\plugin.png" />
-    <Content Include="Images\plugin_go.png" />
-    <Content Include="Images\plugin_link.png" />
-    <Content Include="Images\table_save.png" />
     <Content Include="script.ico" />
     <None Include="Mode.xsd" />
     <None Include="MT-Mode.xshd">

@@ -13,9 +13,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MiniSqlQuery.Core;
 using MiniSqlQuery.Core.DbModel;
-using MiniSqlQuery.Core.Forms;
 using MiniSqlQuery.Core.Template;
-using MiniSqlQuery.Plugins.TemplateViewer;
 using MiniSqlQuery.Properties;
 
 namespace MiniSqlQuery
@@ -62,13 +60,10 @@ namespace MiniSqlQuery
 			services.RegisterSingletonComponent<IFileEditorResolver, FileEditorResolverService>("FileEditorResolver");
 
 			// components
-			services.RegisterComponent<AboutForm>("AboutForm");
 			services.RegisterComponent<ITextFindService, BasicTextFindService>("DefaultTextFindService");
 			services.RegisterComponent<IQueryEditor, QueryForm>("QueryForm");
 			services.RegisterComponent<ISqlWriter, SqlWriter>("DefaultSqlWriter");
 			services.RegisterComponent<ITextFormatter, NVelocityWrapper>("TextFormatter");
-			services.RegisterComponent<TemplateModel>("TemplateModel");
-			services.RegisterComponent<BatchQuerySelectForm>("BatchQuerySelectForm");
 		}
 
 		/// <summary>

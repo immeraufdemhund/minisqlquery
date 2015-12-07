@@ -6,8 +6,8 @@
 
 #endregion License
 
-using MiniSqlQuery.Core;
 using System.Windows.Forms;
+using MiniSqlQuery.Core;
 using WeifenLuo.WinFormsUI.Docking;
 
 namespace MiniSqlQuery.Commands
@@ -27,11 +27,9 @@ namespace MiniSqlQuery.Commands
 		/// <summary>Execute the command.</summary>
 		public override void Execute()
 		{
-			NewFileForm newFileForm = Services.Resolve<NewFileForm>();
+			var newFileForm = Services.Resolve<NewFileForm>();
 
-			DialogResult result = newFileForm.ShowDialog();
-
-			if (result == DialogResult.OK)
+			if (newFileForm.ShowDialog() == DialogResult.OK)
 			{
 				var editor = Services.Resolve<IEditor>(newFileForm.FileEditorDescriptor.EditorKeyName);
 				editor.FileName = null;
