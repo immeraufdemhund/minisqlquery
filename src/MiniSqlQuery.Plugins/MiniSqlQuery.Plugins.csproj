@@ -67,6 +67,7 @@
     <Compile Include="ConnectionStringsManager\DbConnectionsForm.Designer.cs">
       <DependentUpon>DbConnectionsForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="ConnectionStringsManager\DbConnectionsFormDialog.cs" />
     <Compile Include="ConnectionStringsManager\GenericConnectionStringBuilder.cs" />
     <Compile Include="DatabaseInspector\Commands\CopyTableNameCommand.cs" />
     <Compile Include="DatabaseInspector\Commands\GenerateDeleteStatementCommand.cs" />

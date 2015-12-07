@@ -170,9 +170,9 @@ namespace MiniSqlQuery.Core
 		/// <typeparam name = "TService">The contract type.</typeparam>
 		/// <typeparam name = "TImp">The implementing type.</typeparam>
 		/// <param name = "key">The key or name of the service.</param>
-		public void RegisterComponent<TService, TImp>(string key)
+		public void RegisterComponent<TService, TImp>(string key) where TImp : TService
 		{
-			_container.Bind<TService>().To(typeof(TImp)).InTransientScope().Named(key);
+			_container.Bind<TService>().To<TImp>().InTransientScope().Named(key);
 		}
 
 		/// <summary>

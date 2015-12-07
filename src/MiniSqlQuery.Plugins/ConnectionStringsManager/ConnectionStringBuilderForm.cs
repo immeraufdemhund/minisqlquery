@@ -23,8 +23,8 @@ namespace MiniSqlQuery.Plugins.ConnectionStringsManager
 		/// <summary>The _services.</summary>
 		private readonly IApplicationServices _services;
 
-		/// <summary>Gets or sets ConnectionDefinition.</summary>
-		public DbConnectionDefinition ConnectionDefinition { get; set; }
+		/// <summary>Gets ConnectionDefinition.</summary>
+		public DbConnectionDefinition ConnectionDefinition { get; private set; }
 
 		/// <summary>The default provider name.</summary>
 		public const string DefaultProviderName = "System.Data.SqlClient";
@@ -117,13 +117,10 @@ namespace MiniSqlQuery.Plugins.ConnectionStringsManager
 			Icon = ImageResource.database_edit_icon;
 		}
 
-		/// <summary>Initializes a new instance of the <see cref="ConnectionStringBuilderForm"/> class.</summary>
-		/// <param name="hostWindow">The host window.</param>
-		/// <param name="definition">The definition.</param>
-		/// <param name="services">The services.</param>
-		public ConnectionStringBuilderForm(IHostWindow hostWindow, DbConnectionDefinition definition, IApplicationServices services)
-			: this(hostWindow, services)
+		public void SetConnectionDefinition(DbConnectionDefinition definition)
 		{
+			if (definition == null) return;
+
 			ConnectionDefinition = definition;
 			ConnectionName = ConnectionDefinition.Name;
 			Comments = ConnectionDefinition.Comment;

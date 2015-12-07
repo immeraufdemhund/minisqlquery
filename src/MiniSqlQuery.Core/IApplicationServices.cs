@@ -71,7 +71,7 @@ namespace MiniSqlQuery.Core
 		/// <typeparam name = "TService">The contract type.</typeparam>
 		/// <typeparam name = "TImp">The implementing type.</typeparam>
 		/// <param name = "key">The key or name of the service.</param>
-		void RegisterComponent<TService, TImp>(string key);
+		void RegisterComponent<TService, TImp>(string key) where TImp : TService;
 
 		/// <summary>
 		/// 	Registers the component implemetation of type <typeparamref name = "TImp" />.

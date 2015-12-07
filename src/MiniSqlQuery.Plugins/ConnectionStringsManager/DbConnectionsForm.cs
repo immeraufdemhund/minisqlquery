@@ -14,45 +14,30 @@ using System.Windows.Forms;
 namespace MiniSqlQuery.Plugins.ConnectionStringsManager
 {
 	/// <summary>The db connections form.</summary>
-	public partial class DbConnectionsForm : Form
+	internal partial class DbConnectionsForm : Form
 	{
-		/// <summary>The _host window.</summary>
 		private readonly IHostWindow _hostWindow;
-
-		/// <summary>The _services.</summary>
 		private readonly IApplicationServices _services;
-
-		/// <summary>The _settings.</summary>
 		private readonly IApplicationSettings _settings;
-
-		/// <summary>The _definition list.</summary>
 		private DbConnectionDefinitionList _definitionList;
-
 		private bool _loaded;
-
 		private bool _dirty;
-
-		/// <summary>Initializes a new instance of the <see cref="DbConnectionsForm"/> class.</summary>
-		public DbConnectionsForm()
-		{
-			InitializeComponent();
-			toolStripButtonAdd.Image = ImageResource.database_add;
-			toolStripButtonCopyAsNew.Image = ImageResource.database_add;
-			toolStripButtonEditConnStr.Image = ImageResource.database_edit;
-			toolStripButtonDelete.Image = ImageResource.database_delete;
-			Icon = ImageResource.disconnect_icon;
-		}
 
 		/// <summary>Initializes a new instance of the <see cref="DbConnectionsForm"/> class.</summary>
 		/// <param name="services">The services.</param>
 		/// <param name="hostWindow">The host window.</param>
 		/// <param name="settings">The settings.</param>
 		public DbConnectionsForm(IApplicationServices services, IHostWindow hostWindow, IApplicationSettings settings)
-			: this()
 		{
 			_services = services;
 			_hostWindow = hostWindow;
 			_settings = settings;
+			InitializeComponent();
+			toolStripButtonAdd.Image = ImageResource.database_add;
+			toolStripButtonCopyAsNew.Image = ImageResource.database_add;
+			toolStripButtonEditConnStr.Image = ImageResource.database_edit;
+			toolStripButtonDelete.Image = ImageResource.database_delete;
+			Icon = ImageResource.disconnect_icon;
 		}
 
 		/// <summary>The load connection definitions.</summary>
@@ -118,23 +103,11 @@ namespace MiniSqlQuery.Plugins.ConnectionStringsManager
 		/// <param name="definition">The definition.</param>
 		private void ManageDefinition(DbConnectionDefinition definition)
 		{
-			ConnectionStringBuilderForm frm;
-			string oldName = null;
-
-			if (definition == null)
+			using (var frm = _services.Resolve<ConnectionStringBuilderForm>())
 			{
-				frm = new ConnectionStringBuilderForm(_hostWindow, _services); // new blank form
-			}
-			else
-			{
-				oldName = definition.Name;
-				frm = new ConnectionStringBuilderForm(_hostWindow, definition, _services);
-			}
-
-			frm.ShowDialog(this);
-
-			if (frm.DialogResult == DialogResult.OK)
-			{
+				frm.SetConnectionDefinition(definition);
+				string oldName = definition == null ? null : definition.Name;
+				if(frm.ShowDialog(this) != DialogResult.OK) return;
 				SetDirty();
 
 				if (lstConnections.Items.Contains(frm.ConnectionDefinition) && definition != null)
